@@ -86,7 +86,7 @@ Return the updated user object
 
 function maxedOut(obj) {
     for (let key in obj) {
-        obj[key] = "max"
+        obj[key] = "max";
     }
 
     return obj
@@ -247,7 +247,8 @@ Title and name in this sentence should be replaced with the values of the destru
 */
 
 const greeting = ({name, title}) => {
-    return "Hello, " + title + " " + name + "!"
+    // return "Hello, " + title + " " + name + "!"
+    return `Hello, ${title} ${name}!`
 }
 
 
@@ -262,14 +263,13 @@ Return the value that is truthy
 */
 
 const truthyFalsy = ({number, string}) => {
-    // if (number) {
-    //     return number
-    // }
+    if (number) {
+        return number
+    }
 
-    // return string
-
-    return (!(number) ? string : number)
+    return string
 }
+
 
 
 
@@ -365,9 +365,12 @@ The values of each property should correspond to its respective parameter
 
 You should not use the ES5 function declaration or function expression syntax in your final solution
 */
-const gemInfo = (gemType, gemSize, gemWeight) => {
-    return {gemType, gemSize, gemWeight}
-}
+
+// const gemInfo = (gemType, gemSize, gemWeight) => {
+//     return {gemType, gemSize, gemWeight}
+// }
+
+const gemInfo = (gemType, gemSize, gemWeight) => ({gemType, gemSize, gemWeight})
 
 
 
@@ -459,8 +462,9 @@ Make sure to use arrow functions combined with the reduce method
 
 */
 
-const productOfArray = numbers => 
-    numbers.reduce((acc, val) => {
-        return acc * val
-    })
+// const productOfArray = numbers => 
+//     numbers.reduce((acc, val) => {
+//         return acc * val
+//     })
 
+const productOfArray = numbers => numbers.reduce((acc, val) => acc * val)
